@@ -23,34 +23,35 @@ h1{
 ul{
     margin-bottom: 0px;
 }
-header{
-    background-color: #e4d0b3;
+
+.col-3 img{
+    width: 150px;
+    height: 100px;
 }
-.container-header{
-    margin: 10px;
-}
-header nav li{
+header nav {
     list-style:none;
-    display:inline-block;
-    padding:0 15px
+    padding:0 15px;
+}
+header nav li {
+    text-transform:uppercase;
+    display:inline;
+    margin-right: 10px;
 }
 header nav li a{
-    color:#fff;
-    text-transform:uppercase
+    color: black;
+    font-weight:300;
+    text-decoration: none;
 }
 header nav li a:hover{
-    color:#fff
+    color:rgb(42, 61, 13)
 }
 footer{
     background-color:#e4d0b3;
     padding:10px 0;
 }
-footer{
-    color:rgb(255, 255, 255)
-}
 footer p{
     margin:0;
-    color:rgb(94, 81, 81)}
+    color: black}
 .lista-productos h2{
     font-weight:900
 }
