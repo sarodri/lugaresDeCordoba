@@ -39,3 +39,29 @@ function sidebar(){
     ) );
 };
 add_action( 'widgets_init','sidebar');
+
+function lugares_type(){
+    $labels = array(
+        'name' => 'Lugares',
+        'singular_name' => 'Lugar',
+        'menu_name' => 'Lugares'
+    );
+    $args = array(
+        'label' => 'Lugares',
+        'description' => 'Lugares para visitar',
+        'labels' =>  $labels,
+        'supports' => array('title', 'editor', 'thumbnail', 'revision'),
+        'public' => true,
+        'show_in_menu' => true,
+        'menu_position' => 5,
+        'menu_icon' => 'dashicons-admin-post',
+        'can_export' => true,
+        'publicly_querable' => true,
+        'rewrite' => true,
+        'show_in_rest' => true
+
+    );
+    register_post_type( 'lugar', $args);
+};
+
+add_action('init', 'lugares_type' );
