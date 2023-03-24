@@ -1,5 +1,5 @@
 /*
-Theme name: Lugares
+Theme name: Lugares De Córdoba
 Version: 1.0
 Description: sitio para lugares de Córdoba
 Author: Sandra Ropero
@@ -25,8 +25,8 @@ ul{
 }
 
 .col-3 img{
-    width: 150px;
-    height: 100px;
+    width: 180px;
+    height: 120px;
 }
 header nav {
     list-style:none;
@@ -48,7 +48,6 @@ header nav li a:hover{
 
 footer{
     background-color:#e4d0b3;
-    padding:10px 0;
 }
 footer p{
     margin:0;

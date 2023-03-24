@@ -6,9 +6,7 @@
         /* <!-- evalua si hay contenido o no --> */
         while(have_posts(  )){
             the_post(); ?>
-            <!-- retorna el titulo de la pagina y lo imprime -->
-            <h1 class="my-3"><?php the_title(); ?></h1>
-            <!-- muestra el contenido -->
+         
             <?php the_content(); ?>
         <?php }
     }?>
