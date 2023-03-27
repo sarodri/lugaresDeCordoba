@@ -3,4 +3,5 @@ This is a website created wiht wordpress to show the visitors where they can eat
 
 # Yet we are in construction.
 
-![Captura de Pantalla 2023-03-17 a las 13 52 22](https://user-images.githubusercontent.com/121671203/225910303-a64b4dd9-65bc-4af2-9ec9-99e4fd8636cf.png)
+<img width="1135" alt="Captura de pantalla 2023-03-27 a las 11 51 14" src="https://user-images.githubusercontent.com/121671203/227907535-fa253996-07b2-4d8e-9c8b-af168701857d.png">
+
