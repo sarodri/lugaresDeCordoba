@@ -48,7 +48,7 @@ function lugares_type(){
     );
     $args = array(
         'label' => 'Lugares',
-        'description' => 'Lugares para visitar',
+        'description' => 'Lugares de Córdoba',
         'labels' =>  $labels,
         'supports' => array('title', 'editor', 'thumbnail', 'revision'),
         'public' => true,
