@@ -41,27 +41,70 @@ function sidebar(){
 add_action( 'widgets_init','sidebar');
 
 function lugares_type(){
-    $labels = array(
-        'name' => 'Lugares',
+    $label1 = array(
+        'name' => 'Dónde comer',
         'singular_name' => 'Lugar',
-        'menu_name' => 'Lugares'
+        'menu_name' => 'Dónde comer'
     );
-    $args = array(
-        'label' => 'Lugares',
-        'description' => 'Lugares de Córdoba',
-        'labels' =>  $labels,
+    $args1 = array(
+        'label' => 'Comer',
+        'description' => 'Lugares de Córdoba donde comer',
+        'labels' =>  $label1,
         'supports' => array('title', 'editor', 'thumbnail', 'revision'),
         'public' => true,
         'show_in_menu' => true,
         'menu_position' => 5,
-        'menu_icon' => 'dashicons-admin-post',
+        'menu_icon' => 'dashicons-category',
         'can_export' => true,
         'publicly_querable' => true,
         'rewrite' => true,
         'show_in_rest' => true
 
     );
-    register_post_type( 'lugar', $args);
+    $label2 = array(
+        'name' => 'Dónde dormir',
+        'singular_name' => 'Lugar',
+        'menu_name' => 'Dónde dormir'
+    );
+    $args2 = array(
+        'label' => 'Dormir',
+        'description' => 'Lugares de Córdoba donde dormir',
+        'labels' =>  $label2,
+        'supports' => array('title', 'editor', 'thumbnail', 'revision'),
+        'public' => true,
+        'show_in_menu' => true,
+        'menu_position' => 5,
+        'menu_icon' => 'dashicons-category',
+        'can_export' => true,
+        'publicly_querable' => true,
+        'rewrite' => true,
+        'show_in_rest' => true
+
+    );
+    $label3 = array(
+        'name' => 'Qué visitar',
+        'singular_name' => 'Lugar',
+        'menu_name' => 'Qué visitar'
+    );
+    $args3 = array(
+        'label' => 'Visitar',
+        'description' => 'Lugares de Córdoba para visitar',
+        'labels' =>  $label3,
+        'supports' => array('title', 'editor', 'thumbnail', 'revision'),
+        'public' => true,
+        'show_in_menu' => true,
+        'menu_position' => 5,
+        'menu_icon' => 'dashicons-category',
+        'can_export' => true,
+        'publicly_querable' => true,
+        'rewrite' => true,
+        'show_in_rest' => true
+
+    );
+
+    register_post_type( 'comer', $args1);
+    register_post_type( 'dormir', $args2);
+    register_post_type( 'visitar', $args3);
 };
 
 add_action('init', 'lugares_type' );

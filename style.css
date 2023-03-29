@@ -52,12 +52,9 @@ footer{
 footer p{
     margin:0;
     color: black}
-.lista-productos h2{
-    font-weight:900
-}
-.lista-productos h4{
-    font-weight:400
-}
-.lista-productos h4 a{
-    color:#000
+
+#page404{
+    background-image: url("assets/img/404.jpeg");
+    background-repeat: no-repeat;
+    background-size: auto;
 }
