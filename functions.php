@@ -42,13 +42,13 @@ add_action( 'widgets_init','sidebar');
 
 function lugares_type(){
     $label1 = array(
-        'name' => 'Dónde comer',
+        'name' => 'Lugares',
         'singular_name' => 'Lugar',
-        'menu_name' => 'Dónde comer'
+        'menu_name' => 'Lugares'
     );
-    $args1 = array(
-        'label' => 'Comer',
-        'description' => 'Lugares de Córdoba donde comer',
+    $args = array(
+        'label' => 'Lugares',
+        'description' => 'Lugares de Córdoba',
         'labels' =>  $label1,
         'supports' => array('title', 'editor', 'thumbnail', 'revision'),
         'public' => true,
@@ -61,50 +61,50 @@ function lugares_type(){
         'show_in_rest' => true
 
     );
-    $label2 = array(
-        'name' => 'Dónde dormir',
-        'singular_name' => 'Lugar',
-        'menu_name' => 'Dónde dormir'
-    );
-    $args2 = array(
-        'label' => 'Dormir',
-        'description' => 'Lugares de Córdoba donde dormir',
-        'labels' =>  $label2,
-        'supports' => array('title', 'editor', 'thumbnail', 'revision'),
-        'public' => true,
-        'show_in_menu' => true,
-        'menu_position' => 5,
-        'menu_icon' => 'dashicons-category',
-        'can_export' => true,
-        'publicly_querable' => true,
-        'rewrite' => true,
-        'show_in_rest' => true
+    // $label2 = array(
+    //     'name' => 'Dónde dormir',
+    //     'singular_name' => 'Lugar',
+    //     'menu_name' => 'Dónde dormir'
+    // );
+    // $args2 = array(
+    //     'label' => 'Dormir',
+    //     'description' => 'Lugares de Córdoba donde dormir',
+    //     'labels' =>  $label2,
+    //     'supports' => array('title', 'editor', 'thumbnail', 'revision'),
+    //     'public' => true,
+    //     'show_in_menu' => true,
+    //     'menu_position' => 5,
+    //     'menu_icon' => 'dashicons-category',
+    //     'can_export' => true,
+    //     'publicly_querable' => true,
+    //     'rewrite' => true,
+    //     'show_in_rest' => true
 
-    );
-    $label3 = array(
-        'name' => 'Qué visitar',
-        'singular_name' => 'Lugar',
-        'menu_name' => 'Qué visitar'
-    );
-    $args3 = array(
-        'label' => 'Visitar',
-        'description' => 'Lugares de Córdoba para visitar',
-        'labels' =>  $label3,
-        'supports' => array('title', 'editor', 'thumbnail', 'revision'),
-        'public' => true,
-        'show_in_menu' => true,
-        'menu_position' => 5,
-        'menu_icon' => 'dashicons-category',
-        'can_export' => true,
-        'publicly_querable' => true,
-        'rewrite' => true,
-        'show_in_rest' => true
+    // );
+    // $label3 = array(
+    //     'name' => 'Qué visitar',
+    //     'singular_name' => 'Lugar',
+    //     'menu_name' => 'Qué visitar'
+    // );
+    // $args3 = array(
+    //     'label' => 'Visitar',
+    //     'description' => 'Lugares de Córdoba para visitar',
+    //     'labels' =>  $label3,
+    //     'supports' => array('title', 'editor', 'thumbnail', 'revision'),
+    //     'public' => true,
+    //     'show_in_menu' => true,
+    //     'menu_position' => 5,
+    //     'menu_icon' => 'dashicons-category',
+    //     'can_export' => true,
+    //     'publicly_querable' => true,
+    //     'rewrite' => true,
+    //     'show_in_rest' => true
 
-    );
+    // );
 
-    register_post_type( 'comer', $args1);
-    register_post_type( 'dormir', $args2);
-    register_post_type( 'visitar', $args3);
+    register_post_type( 'lugar', $args);
+    // register_post_type( 'dormir', $args2);
+    // register_post_type( 'visitar', $args3);
 };
 
 add_action('init', 'lugares_type' );
