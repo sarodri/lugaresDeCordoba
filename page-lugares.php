@@ -8,7 +8,7 @@
             <?php the_content(); ?>
         <?php }
     }?>
-
+<!-- 
     <div class="lugares">
         <h2 class="text-center">LUGARES DE CÓRDOBA</h2>
         <div class="row">
@@ -40,7 +40,7 @@
         }
         ?>
         </div>
-    </div>
+    </div> -->
 </main>
 
 <?php get_footer(); ?>

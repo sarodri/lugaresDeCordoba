@@ -57,7 +57,7 @@ header nav li a:hover{
 
 footer{
     background-color:#e4d0b3;
-    position: fixed;
+    position: absolute;
     display: inline-block;
     bottom: 0;
     width: 100%;
@@ -108,6 +108,14 @@ footer p{
     
 }
 .lugares-relacionados h6 {
-    margin-top: 8px;
+    margin-top: 10px;
+}
+.lugares-relacionados a{
+    color: black;
+    font-weight:300;
+    text-decoration: none;
+}
+.lugares-relacionados a:hover{
+    color:rgb(42, 61, 13)
 }
 
