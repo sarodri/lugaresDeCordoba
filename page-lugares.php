@@ -19,14 +19,12 @@
             'order' => 'ASC',
             'order_by' => 'title'  
         );
-
         $lugares = new WP_Query($args);
         
         if($lugares->have_posts()){
             while($lugares ->have_posts()){
                 $lugares-> the_post();
             ?>
-
                 <div class="col-4" id="page">
                     <figure>
                         <?php the_post_thumbnail('large'); ?>
@@ -35,7 +33,6 @@
                         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                     </h4>
                 </div>
-
         <?php } 
         }
         ?>

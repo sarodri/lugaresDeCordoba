@@ -11,8 +11,8 @@
 <header>
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-3">
-                <img src="<?php echo get_template_directory_uri()?>/assets/img/logo.png" alt="logo">
+            <div class="col-3" id="logo">
+                <img src="<?php echo get_template_directory_uri()?>/assets/img/logo.jpeg" alt="logo">
             </div>
             <div class="col-9">
                 <nav>

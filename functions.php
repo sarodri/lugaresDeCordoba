@@ -75,10 +75,10 @@ function RegisterTax() {
         'show_in_nav_menu' => true,
         'show_admin_column' => true,
         'rewrite' => array(
-            'slug' => 'tipo-lugares'
+            'slug' => 'lugar'
         )
     );
-    register_taxonomy('tipo-lugares', array('lugar'), $args);
+    register_taxonomy('lugar', array('lugar'), $args);
 };
 
 add_action('init', 'RegisterTax');
