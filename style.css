@@ -14,6 +14,8 @@ html {
 }
 body{
     padding-bottom: 10%;
+    background-color:antiquewhite;
+
 }
 a,h1,h2,h3,h4,li,p,span,ul{
     font-family:Montserrat
@@ -33,14 +35,17 @@ ul{
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    margin-top: 10px;
+    margin: 10px;
 }
 .col-3#footer img{
     width: 180px;
     height: 120px;
 }
+header {
+    background-color:#e4d0b3;
+}
 header .container-menu ul{
-      gap: 15px;
+      gap: 15px; 
 }
 header nav {
     list-style:none;
@@ -57,7 +62,8 @@ header nav li a{
     text-decoration: none;
 }
 header nav li a:hover{
-    color:rgb(171, 200, 128)
+    color:rgb(90, 47, 12);
+    text-shadow: rgba(190, 152, 104, 0.855) 1px 0 10px;
 }
 footer{
     background-color:#e4d0b3;
@@ -119,6 +125,20 @@ footer p{
     text-decoration: none;
 }
 .lugares-relacionados a:hover{
-    color:rgb(171, 200, 128)
+    color:rgb(90, 47, 12);
+    text-shadow: rgba(190, 152, 104, 0.855) 1px 0 10px;
 }
-
+#institucional img{
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+#institucional p{
+    text-align: justify;
+    text-justify: inter-word;
+    margin-left: 20px;
+}
+.formulario{
+    margin: auto;
+    width: 50%;
+}

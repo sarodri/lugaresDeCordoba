@@ -4,20 +4,31 @@
     <?php if(have_posts(  )){
         while(have_posts(  )){
             the_post(  );?>
+            <!-- para mostrar objetos relacionados con la categoria: -->
+            <!-- <?php $taxonomy = get_the_terms(get_the_ID(), 'lugar'); ?> --> 
             <h1 class='my-6'><?php the_title( ); ?></h1>
             <div class="row">
+                <!-- Para mostrar el contenido de lugares: -->
                 <!-- <div class="col-md-6 col-12" id="lugares-page">
                 <img src="<?php echo get_template_directory_uri()?>/assets/img/encanto.jpeg" alt="comer">
                 </div>
                 <div class="col-md-6 col-12"> -->
                     <?php the_content(); ?>
-                <!-- </div> -->
+                <!-- </div> --> 
             </div>
         <?php $args= array(
             'post_type'=> 'lugar',
             'post_per_page'=> 3,
             'order'=> 'ASC',
-            'order_by'=> 'title'
+            'order_by'=> 'title',
+            // para mostrar objetos relacionados con la categoria:
+            // 'tax_query' => array(
+            //     array(
+            //         'taxonomy'=> 'lugar',
+            //         'field' => 'lugar',
+            //         'terms' => $taxonomy[0]-> slug
+            //     )
+            // )
         );
         $lugares = new WP_Query($args); ?>
 
