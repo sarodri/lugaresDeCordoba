@@ -67,14 +67,19 @@ header nav li a:hover{
 }
 footer{
     background-color:#e4d0b3;
-    position: absolute;
-    display: inline-block;
-    bottom: 0;
     width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
 }
 footer p{
-    margin:0;
-    color: black} 
+    color: black;  
+}
+.links{
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+} 
 .error-404 img{
    height: 100vh;
    width: 70vw;
@@ -140,5 +145,18 @@ footer p{
 }
 .formulario{
     margin: auto;
-    width: 50%;
+}
+.email{
+    display: flex;
+    flex-direction: column;
+    align-items:  center;
+   
+}
+.email img{
+    width: 200px;
+    height: 200px; 
+}
+.email p{
+    text-align: justify;
+    text-justify: inter-word;
 }

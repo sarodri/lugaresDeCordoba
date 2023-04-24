@@ -21,15 +21,15 @@ $fields = get_fields(); ?>
                    <?php the_content(); ?>
             </div>
             <hr>
-            <div class="formulario">
-                <div>
-                <p>Si quieres contactar conmigo para cualquier duda, aportación o tienes algo que ofrecerme... puedes hacerlo a través de este formulario.</p>    
+            <div class="row my-5 formulario">
+                <div class="col-4 email">
+                     <p>Si quieres contactar conmigo para cualquier duda, aportación o tienes algo que ofrecerme... puedes hacerlo a través de este formulario.</p>  
+                    <img src="<?php echo get_template_directory_uri()?>/assets/img/email.png" alt="email">  
                 </div>
-                <div>
-                <?php echo do_shortcode('[contact-form-7 id="269" title="Formulario de contacto 1"]'); ?>
+                <div class="col-8">
+                    <?php echo do_shortcode('[contact-form-7 id="269" title="Formulario de contacto 1"]'); ?>
                 </div>
-            </div>
-           
+            </div> 
         <?php }
     }?>
 </main>
