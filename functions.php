@@ -22,9 +22,13 @@ function assets(){
     wp_enqueue_script( 'bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js', array('popper'), '5.2.3', true);
     
     wp_enqueue_script('custom',get_template_directory_uri().'/assets/js/custom.js','','1.0.0',true);
-    
+
     wp_enqueue_script('jquery');
-}
+
+    wp_localize_script('custom', 'lg', array(
+        'ajaxurl' => admin_url('admin-ajax.php')
+    ));
+};
 
 add_action( 'wp_enqueue_scripts', 'assets');
 
@@ -84,3 +88,37 @@ function RegisterTax() {
 };
 
 add_action('init', 'RegisterTax');
+
+//Para filtros de búsqueda:
+
+// add_action("wp_ajax_nopriv_lgFiltroLugares", "lgFiltroLugares");
+// add_action("wp_ajax_lgFiltroLugares", "lgFiltroLugares");
+// function lgFiltroLugares(){
+//     $args= array(
+//         'post_type'=> 'lugar',
+//         'post_per_page'=> 3,
+//         'order'=> 'ASC',
+//         'order_by'=> 'title',
+//         'tax_query'=> array(
+//                 array(
+//                     'taxonomy'=> 'lugar',
+//                     'field' => 'lugar',
+//                     'terms' => $_POST['categoria'],
+//                 )
+//                 )
+//     );
+      
+//     $lugares = new WP_Query($args);
+//     if ($lugares->have_posts()){
+//         $return = array();
+//        while($lugares->have_posts()){
+//         $lugares->the_post();
+//         $return[] = array(
+//             'imagen' => get_the_post_thumbnail(get_the_ID(), 'large'),
+//             'link' => get_the_permalink(),
+//             'titulo' => get_the_title(),
+//         );
+//        };
+//        wp_send_json($return);
+//     }
+// }

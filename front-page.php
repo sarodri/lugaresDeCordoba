@@ -8,7 +8,8 @@
      <?php   }
     }
     ?>
-     <div class="lugares">
+    <!-- Para filtrar resultados de búsquedas: -->
+     <!-- <div class="lugares">
         <h2 class="text-center">MÁS INFORMACIÓN</h2>
         <div class="row">
             <div class="col-12">
@@ -20,8 +21,8 @@
                     } ?>
                 </select>
             </div>
-        </div>
-        <div class="row my-5">
+        </div> -->
+        <!-- <div class="row my-5" id="resultado-lugares">
         <?php 
         $args = array(
             'post_type' => 'lugar',
@@ -47,7 +48,7 @@
         }
         ?>
         </div>
-    </div>
+    </div> -->
 </main>
 
 <?php get_footer(); ?>
