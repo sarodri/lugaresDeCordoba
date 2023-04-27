@@ -9,20 +9,28 @@
     }
     ?>
     <!-- Para filtrar resultados de búsquedas: -->
-     <!-- <div class="lugares">
+     <div class="lugares">
         <h2 class="text-center">MÁS INFORMACIÓN</h2>
         <div class="row">
             <div class="col-12">
                 <select class="form-select" name="lugar" id="lugar">
                     <option value="">Todos los lugares</option>
-                    <?php $terms = get_terms('lugar', array('hide_empty' => true)); ?>
-                    <?php foreach ($terms as $term) {
-                        echo '<option value="'.$term->slug.'">'.$term->name.'</option>';
-                    } ?>
+                    <?php
+                        $args = array(
+                            'orderby'    => 'name', 
+                            'order'      => 'ASC',
+                            'hide_empty' => true
+                        );
+                        $terms = get_terms('lugar', $args);
+
+                        foreach ($terms as $term){
+                            echo '<option value="'.$term->slug.'">'.$term->name.'</option>';
+                        } unset($term);
+                    ?>
                 </select>
             </div>
-        </div> -->
-        <!-- <div class="row my-5" id="resultado-lugares">
+        </div> 
+         <div class="row my-5" id="resultado-lugares">
         <?php 
         $args = array(
             'post_type' => 'lugar',
@@ -48,7 +56,13 @@
         }
         ?>
         </div>
-    </div> -->
+    </div>
+    <div class="noticias">
+       
+        <h2 class="text-center">NOTICIAS</h2>
+       
+        <div class="row my-5" id="resultado-noticias"></div>
+    </div>
 </main>
 
 <?php get_footer(); ?>

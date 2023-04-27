@@ -96,10 +96,19 @@ footer p{
 .lugares h4 a{
     color:#000
 }
+.noticias h4 a{
+    color:#000
+}
 #lugares img {
     border-radius: 10px;
 }
 .col-4#page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.col-md-4#sec-noticias{
     display: flex;
     flex-direction: column;
     align-items: center;

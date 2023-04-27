@@ -26,7 +26,8 @@ function assets(){
     wp_enqueue_script('jquery');
 
     wp_localize_script('custom', 'lg', array(
-        'ajaxurl' => admin_url('admin-ajax.php')
+        'ajaxurl' => admin_url('admin-ajax.php'),
+        'apiurl' => home_url('/wp-json/lg/v1/')
     ));
 };
 
@@ -89,36 +90,81 @@ function RegisterTax() {
 
 add_action('init', 'RegisterTax');
 
-//Para filtros de búsqueda:
+// Para filtros de búsqueda:
 
-// add_action("wp_ajax_nopriv_lgFiltroLugares", "lgFiltroLugares");
-// add_action("wp_ajax_lgFiltroLugares", "lgFiltroLugares");
-// function lgFiltroLugares(){
-//     $args= array(
-//         'post_type'=> 'lugar',
-//         'post_per_page'=> 3,
-//         'order'=> 'ASC',
-//         'order_by'=> 'title',
-//         'tax_query'=> array(
-//                 array(
-//                     'taxonomy'=> 'lugar',
-//                     'field' => 'lugar',
-//                     'terms' => $_POST['categoria'],
-//                 )
-//                 )
-//     );
+add_action('wp_ajax_nopriv_lgFiltroLugares', 'lgFiltroLugares');
+add_action('wp_ajax_lgFiltroLugares', 'lgFiltroLugares');
+
+function lgFiltroLugares(){
+    
+    $args= array(
+        'post_type'=> 'lugar',
+        'post_per_page'=> -1,
+        'order'=> 'ASC',
+        'order_by'=> 'title',
+        'tax_query'=> array(
+                array(
+                    'taxonomy'=> 'lugar',
+                    'field' => 'slug',
+                    'terms' => $_POST['categoria'],
+                )
+                )
+    );
       
-//     $lugares = new WP_Query($args);
-//     if ($lugares->have_posts()){
-//         $return = array();
-//        while($lugares->have_posts()){
-//         $lugares->the_post();
-//         $return[] = array(
-//             'imagen' => get_the_post_thumbnail(get_the_ID(), 'large'),
-//             'link' => get_the_permalink(),
-//             'titulo' => get_the_title(),
-//         );
-//        };
-//        wp_send_json($return);
-//     }
-// }
+    $lugares = new WP_Query($args);
+    $return = array();
+    if ($lugares->have_posts()) {
+        while($lugares->have_posts()):
+            $lugares->the_post();
+            $return[] = array(
+                'imagen' => get_the_post_thumbnail(get_the_ID(), 'large'),
+                'link' => get_the_permalink(),
+                'titulo' => get_the_title()
+            );  endwhile;
+        }   else {
+            $response = 'empty';
+          }
+  
+
+    wp_send_json($return);
+    exit;
+   
+    }
+add_action('rest_api_init', function(){
+    register_rest_route(
+        'lg/v1', 
+        '/noticias/(?P<cantidad>\d+)', 
+        array(
+            'methods' => 'GET',
+            'callback' => 'noticiasAPI',
+        )
+    );
+});
+
+function noticiasAPI($data){
+    $args= array(
+            'post_type'=> 'post',
+            'post_per_page'=> $data['cantidad'],
+            'order'=> 'ASC',
+            'orderby'=> 'title',
+        );
+              
+        $noticias = new WP_Query($args);
+
+        if ($noticias->have_posts()){
+            $return = array();
+            while($noticias->have_posts()){
+                $noticias->the_post();
+                $return[] = array(
+                    'imagen' => get_the_post_thumbnail(get_the_ID(), 'large'),
+                    'link' => get_permalink(),
+                    'titulo' => get_the_title(),
+                );
+            }
+        }
+            else {
+                return null;
+            }
+           
+            return $return;
+}
