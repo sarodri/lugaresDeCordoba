@@ -8,8 +8,6 @@
             <?php the_content(); ?>
         <?php }
     }?>
-
-   
 </main>
 
 <?php get_footer(); ?>

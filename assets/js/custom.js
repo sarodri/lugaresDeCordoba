@@ -1,6 +1,5 @@
 // AJAX con jQuery para utilizar filtros de categorias, con Bootstrap 5 usamos JS puro.
 
-
 (function($){
     console.log('Hola WordPress');
    
@@ -21,9 +20,9 @@
                 data.forEach(item => {
                     html += `<div class="col-md-4 col-12 my-3">
                     <figure>${item.imagen}</figure>
-                    <h4 class="my-2">
+                    <h6 class="my-2">
                         <a href="${item.link}">${item.titulo}</a>
-                    </h4>
+                    </h6>
                 </div>`;
                 })
                 $("#resultado-lugares").html(html);
@@ -33,7 +32,7 @@
             },
         })
     })
-
+// Uso de REST API:
 $(document).ready(function(){
             $.ajax({
                 url:lg.apiurl+"noticias/3",
@@ -47,9 +46,9 @@ $(document).ready(function(){
                     data.forEach(item => {
                         html += `<div class="col-md-4 col-12 my-3" id="sec-noticias">
                     <figure>${item.imagen}</figure>
-                    <h4 class="my-2">
+                    <h6 class="my-2">
                         <a href="${item.link}">${item.titulo}</a>
-                    </h4>
+                    </h6>
                 </div>`;                   })
                     $("#resultado-noticias").html(html);
                 },

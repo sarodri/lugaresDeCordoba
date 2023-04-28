@@ -15,7 +15,6 @@ html {
 body{
     padding-bottom: 10%;
     background-color:antiquewhite;
-
 }
 a,h1,h2,h3,h4,li,p,span,ul{
     font-family:Montserrat
@@ -93,16 +92,22 @@ footer p{
 .lugares h4{
     font-weight:400
 }
-.lugares h4 a{
+.lugares h6 a{
     color:#000
 }
-.noticias h4 a{
+.noticias h6 a{
     color:#000
 }
 #lugares img {
     border-radius: 10px;
 }
 .col-4#page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.col-md-4#page{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -159,7 +164,6 @@ footer p{
     display: flex;
     flex-direction: column;
     align-items:  center;
-   
 }
 .email img{
     width: 200px;

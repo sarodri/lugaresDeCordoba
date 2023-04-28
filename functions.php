@@ -127,9 +127,10 @@ function lgFiltroLugares(){
   
 
     wp_send_json($return);
-    exit;
-   
-    }
+    exit;  
+}
+// Uso de REST API:
+
 add_action('rest_api_init', function(){
     register_rest_route(
         'lg/v1', 

@@ -1,14 +1,13 @@
 <?php get_header(); ?>
 
 <main class='container my-3'>
-     <?php if (have_posts()) {
+    <?php if (have_posts()) {
         while(have_posts(  )){
             the_post(); ?>
             <!-- <h1 class="my-7"><?php the_title(); ?></h1> -->
             <?php the_content(); ?>
         <?php }
     }?>
-
     <div class="lugares">
         <h2 class="text-center">LUGARES DE CÓRDOBA</h2>
         <div class="row">
@@ -26,7 +25,6 @@
             while($lugares ->have_posts()){
                 $lugares-> the_post();
             ?>
-
                 <div class="col-4" id="page">
                     <figure>
                         <?php the_post_thumbnail('large'); ?>
@@ -35,10 +33,8 @@
                         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                     </h4>
                 </div>
-
         <?php } 
-        }
-        ?>
+        } ?>
         </div>
     </div>
 </main>

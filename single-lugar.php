@@ -51,7 +51,6 @@
         <?php } ?>
         <?php } ?>
    <?php } ?>
-
 </main>
 
 <?php get_footer( ); ?>
