@@ -169,3 +169,50 @@ function noticiasAPI($data){
            
             return $return;
 }
+
+
+// Registro de bloques:
+// add_action( 'init', 'lgRegisterBlock' );
+// function lgRegisterBlock() {
+//     $assets = include_once get_template_directory(  ).'/blocks/build/index.asset.php';
+
+//     wp_register_script( 
+//         'lg-block', 
+//         get_template_directory().'/blocks/build/index.js', 
+//         $assets['dependencies'], 
+//         $assets['version'] 
+//     );
+
+//     register_block_type( 'lg/basic',  array(
+//         'editor_script' => 'lg-block',
+//         'render_callback' => 'pgRenderDynamicBlock'
+//     )
+// );
+// }
+
+// function pgRenderDynamicBlock($attributes, $content)
+// {
+//     return '<h2>'.$attributes['content'].'</h2>';
+// }
+// add_action('acf/init', 'pgAcfRegisterBlocks');
+// function pgAcfRegisterBlocks()
+// {
+
+//     if (function_exists('acf_register_block')) {
+//         $block = array(
+//             'name'            => 'lg-slider',
+//             'title'           => __('LG Institucional', 'lst'),
+//             'description'     => __('Bloque para generar la página institucional de Sandra.', 'lst'),
+//             'render_template' => get_template_directory().'/template-parts/block-institucional.php',
+//             'category'        => 'layout',
+//             'icon'            => 'format-gallery',
+//             'mode'            => 'edit',
+//             'keywords'        => array(
+//                 'lugares',
+//                 'wordpress'
+//             )
+//         );
+
+//         acf_register_block($block);
+//     }
+// }
