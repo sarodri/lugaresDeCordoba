@@ -170,34 +170,28 @@ function noticiasAPI($data){
             return $return;
 }
 
-
 // Registro de bloques:
+
 // add_action( 'init', 'lgRegisterBlock' );
 // function lgRegisterBlock() {
 //     $assets = include_once get_template_directory(  ).'/blocks/build/index.asset.php';
-
 //     wp_register_script( 
 //         'lg-block', 
 //         get_template_directory().'/blocks/build/index.js', 
 //         $assets['dependencies'], 
 //         $assets['version'] 
 //     );
-
 //     register_block_type( 'lg/basic',  array(
 //         'editor_script' => 'lg-block',
 //         'render_callback' => 'pgRenderDynamicBlock'
-//     )
-// );
-// }
-
+//     ));}
 // function pgRenderDynamicBlock($attributes, $content)
-// {
-//     return '<h2>'.$attributes['content'].'</h2>';
-// }
+// {return '<h2>'.$attributes['content'].'</h2>';}
+
+//Con ACF PRO: creamos archivo block-institucional.php en template-parts y tomará la plantilla page.php como base. En el administrador customizamos el bloque y se lo agregaos a la pagina institucional, cambiando la platilla institucional por la plantilla de defecto.
 // add_action('acf/init', 'pgAcfRegisterBlocks');
 // function pgAcfRegisterBlocks()
 // {
-
 //     if (function_exists('acf_register_block')) {
 //         $block = array(
 //             'name'            => 'lg-slider',
@@ -212,7 +206,5 @@ function noticiasAPI($data){
 //                 'wordpress'
 //             )
 //         );
+//         acf_register_block($block);}}
 
-//         acf_register_block($block);
-//     }
-// }
